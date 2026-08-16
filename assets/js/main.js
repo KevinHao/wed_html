@@ -211,6 +211,34 @@
 /* 10. WOW active */
     new WOW().init();
 
+/* 10.1 Venue animation on every scroll entry */
+    function venueScrollAnimation() {
+      var venueDetails = document.querySelector('.venue-details');
+      if (!venueDetails) return;
+
+      venueDetails.classList.add('venue-scroll-target');
+
+      if (!('IntersectionObserver' in window)) {
+        venueDetails.classList.add('is-visible');
+        return;
+      }
+
+      var venueObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            venueDetails.classList.remove('is-visible');
+            void entry.target.offsetWidth;
+            venueDetails.classList.add('is-visible');
+          } else {
+            venueDetails.classList.remove('is-visible');
+          }
+        });
+      }, { threshold: 0.2 });
+
+      venueObserver.observe(venueDetails);
+    }
+    venueScrollAnimation();
+
 /* 11. Datepicker */
     
 // 11. ---- Mailchimp js --------//  
@@ -221,7 +249,7 @@
 
 
 // 12 Pop Up Img
-    var popUp = $('.single_gallery_part, .img-pop-up');
+    var popUp = $('.single_gallery_part, .img-pop-up, .gallery-lightbox');
       if(popUp.length){
         popUp.magnificPopup({
           type: 'image',
@@ -230,6 +258,16 @@
           }
         });
       }
+
+    var dressColors = $('.dress-color-lightbox');
+    if (dressColors.length) {
+      dressColors.magnificPopup({
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+      });
+    }
       
 /* 14. Wedding countdown */
     // 請將日期改成你的婚禮日期，格式為 YYYY-MM-DDTHH:mm:ss+08:00。

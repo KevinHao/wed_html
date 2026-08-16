@@ -18,12 +18,15 @@
     ['card-item', '.single-card li'], ['card-button', '.single-card a'],
     ['venue-title', '.venue-title'], ['venue-copy', '.venue-copy'],
     ['venue-button', '.venue-link'],
+    ['dress-title', '.dress-title'], ['dress-copy', '.dress-description'],
+    ['parking-title', '.parking-title'], ['parking-copy', '.parking-description'],
     ['gift-title', '.gift-caption h2'], ['gift-copy', '.gift-caption p'],
     ['footer-title', '.footer-tittle h4'], ['footer-item', '.footer-tittle li']
   ];
   var dragTargets = [
     ['hero', '.slider-area'], ['story', '#story'],
-    ['countdown', '#countdown'], ['gallery', '#gallery'], ['venue', '.venue-area'], ['gift', '.gift-area'],
+    ['countdown', '#countdown'], ['gallery', '#gallery'], ['venue', '.venue-area'],
+    ['dress', '#dress-code'], ['parking', '#parking'], ['gift', '.gift-area'],
     ['brands', '.brand-area'], ['gallery-strip', '.gallery-area2'],
     ['footer', '.footer-main'], ['image', 'main img, footer img']
   ];
