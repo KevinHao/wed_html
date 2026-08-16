@@ -9,6 +9,10 @@
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
@@ -29,24 +33,30 @@
 <div id="envelope-intro" class="envelope-intro" role="dialog" aria-modal="true" aria-label="開啟電子喜帖">
     <div class="envelope-scene">
         <div class="envelope-card">
-            <div class="envelope-paper">
-                <strong>俊凱 &amp; 學安</strong>
-                <span>2026.10.18</span>
+            <div class="envelope-fake-screen" aria-hidden="true">
+                <img src="assets/img/envelope/background_photo.jpg" alt="">
             </div>
-            <div class="envelope-body"></div>
-            <div class="envelope-flap"></div>
-            <button id="envelope-seal" class="envelope-seal" type="button" aria-label="點擊蠟封開啟喜帖" autofocus><span class="seal-monogram">J &amp; S</span></button>
+            <div class="envelope-split-stage" aria-hidden="true">
+                <img class="envelope-page envelope-left-page" src="assets/img/envelope/envelope-left.png" alt="">
+                <div class="envelope-right-page">
+                    <img class="envelope-page" src="assets/img/envelope/envelope-right.png" alt="">
+                    <span class="envelope-seal" aria-hidden="true">
+                        <img src="assets/img/envelope/envelope-seal.png" alt="">
+                    </span>
+                </div>
+            </div>
+            <button id="envelope-open-button" class="envelope-origin-button" type="button" aria-label="開啟電子喜帖" autofocus>
+                <img class="envelope-origin-image" src="assets/img/envelope/envelope-origin.png" alt="">
+            </button>
         </div>
-        <p class="envelope-hint">點擊蠟封，開啟我們的喜帖</p>
     </div>
 </div>
 <!-- Preloader Start -->
 <div id="preloader-active">
     <div class="preloader d-flex align-items-center justify-content-center">
         <div class="preloader-inner position-relative">
-            <div class="preloader-circle"></div>
             <div class="preloader-img pere-text">
-                <img src="assets/img/logo/logo.png" alt="">
+                <img src="assets/img/logo/loading.png" alt="">
             </div>
         </div>
     </div>
@@ -71,8 +81,9 @@
                                     <ul id="navigation">                                                          
                                         <li><a href="#top">Home</a></li>
                                         <li><a href="#story">Wedding Day</a></li>
-                                        <li><a href="#info">Venue</a></li>
                                         <li><a href="#dress-code">Dress Code</a></li>
+                                        <li><a href="#calendar">Calendar</a></li>
+                                        <li><a href="#info">Venue</a></li>
                                         <li><a href="#parking">Parking</a></li>
                                         <li><a href="#countdown">Countdown</a></li>
                                         <li><a href="#gallery">Gallery</a></li>
@@ -158,11 +169,34 @@
                         <span class="invite-year">2026</span>
                     </div>
                     <ul class="invite-details">
-                        <li><time datetime="17:00">17:00</time>賓客報到</li>
-                        <li><time datetime="18:00">18:00</time>婚禮儀式</li>
-                        <li><time datetime="19:00">19:00</time>婚宴開始</li>
+                        <li><time datetime="11:30~12:30">11:30 - 12:30</time>賓客入席</li>
+                        <li><time datetime="12:30~14:30">12:30 - 14:30</time>婚禮進行中</li>
+                        <li><time datetime="14:30~15:00">14:30 - 15:00</time>送客</li>
                     </ul>
                 </div>
+            </div>
+                <!-- Dress Code is part of the Wedding Day page -->
+                <div id="dress-code" class="dress-code-area dress-code-inline section-padding30">
+                    <div class="dress-heading text-center">
+                        <h2 class="dress-title">Dress Code</h2>
+                        <p class="dress-description">一起穿上喜歡的色彩，來參加我們的婚禮。</p>
+                    </div>
+                    <div class="dress-palette">
+                        <div class="dress-color-card"><a href="assets/dress/1.jpg" class="dress-color-lightbox"><img src="assets/dress/1.jpg" alt="Dress Code 色彩 1"></a></div>
+                        <div class="dress-color-card"><a href="assets/dress/2.jpg" class="dress-color-lightbox"><img src="assets/dress/2.jpg" alt="Dress Code 色彩 2"></a></div>
+                        <div class="dress-color-card"><a href="assets/dress/3.jpg" class="dress-color-lightbox"><img src="assets/dress/3.jpg" alt="Dress Code 色彩 3"></a></div>
+                        <div class="dress-color-card"><a href="assets/dress/4.jpg" class="dress-color-lightbox"><img src="assets/dress/4.jpg" alt="Dress Code 色彩 4"></a></div>
+                        <div class="dress-color-card"><a href="assets/dress/5.jpg" class="dress-color-lightbox"><img src="assets/dress/5.jpg" alt="Dress Code 色彩 5"></a></div>
+                    </div>
+                </div>
+        </div>
+    </section>
+    <!-- Wedding Day End -->
+    <!-- Wedding Calendar Start -->
+    <section id="calendar" class="invite-calendar-page story-padding invite-story">
+        <div class="container">
+            <div class="invite-content text-center">
+                <h2 class="invite-heading">Wedding Calendar</h2>
                 <div class="invite-calendar">
                     <h3>2026 / 10</h3>
                     <table aria-label="2026年10月月曆">
@@ -226,16 +260,11 @@
             </div>
         </div>
     </section>
-    <!-- Wedding Day End -->
+    <!-- Wedding Calendar End -->
     <!--? Venue Start -->
     <section id="info" class="venue-area section-padding30">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 mb-30">
-                    <div class="venue-map">
-                        <iframe title="蘭克斯特 Lancaster House 地圖" src="https://www.google.com/maps?q=蘭克斯特%20Lancaster%20House%2C%20406%20臺中市北屯區松竹里崇德路二段347號&amp;z=18&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
                 <div class="col-lg-8 mb-30">
                     <div class="venue-details">
                         <h2 class="venue-title">宴客地點</h2>
@@ -251,36 +280,21 @@
                         <a class="btn venue-link" href="https://www.google.com/maps/search/?api=1&amp;query=蘭克斯特%20Lancaster%20House%20406臺中市北屯區松竹里崇德路二段347號" target="_blank" rel="noopener">開啟 Google 地圖</a>
                     </div>
                 </div>
+                <div class="col-12 mb-30">
+                    <div class="venue-map">
+                        <iframe title="蘭克斯特 Lancaster House 地圖" src="https://www.google.com/maps?q=蘭克斯特%20Lancaster%20House%2C%20406%20臺中市北屯區松竹里崇德路二段347號&amp;z=18&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
     <!-- Venue End -->
-    <!-- Dress Code Start -->
-    <section id="dress-code" class="dress-code-area section-padding30">
-        <div class="container">
-            <div class="dress-heading text-center">
-                <h2 class="dress-title">Dress Code</h2>
-                <p class="dress-description">一起穿上喜歡的色彩，來參加我們的婚禮。</p>
-            </div>
-            <div class="dress-full">
-                <img src="assets/dress/full.jpg" alt="Dress Code 完整資訊">
-            </div>
-            <div class="dress-palette">
-                <div class="dress-color-card"><a href="assets/dress/1.jpg" class="dress-color-lightbox"><img src="assets/dress/1.jpg" alt="Dress Code 色彩 1"></a></div>
-                <div class="dress-color-card"><a href="assets/dress/2.jpg" class="dress-color-lightbox"><img src="assets/dress/2.jpg" alt="Dress Code 色彩 2"></a></div>
-                <div class="dress-color-card"><a href="assets/dress/3.jpg" class="dress-color-lightbox"><img src="assets/dress/3.jpg" alt="Dress Code 色彩 3"></a></div>
-                <div class="dress-color-card"><a href="assets/dress/4.jpg" class="dress-color-lightbox"><img src="assets/dress/4.jpg" alt="Dress Code 色彩 4"></a></div>
-                <div class="dress-color-card"><a href="assets/dress/5.jpg" class="dress-color-lightbox"><img src="assets/dress/5.jpg" alt="Dress Code 色彩 5"></a></div>
-            </div>
-        </div>
-    </section>
-    <!-- Dress Code End -->
     <!-- Parking Start -->
     <section id="parking" class="parking-area section-padding30">
         <div class="container">
             <div class="parking-heading text-center">
-                <h2 class="parking-title">Parking</h2>
-                <p class="parking-description">開車前往的賓客請參考以下停車資訊。</p>
+                <h2 class="parking-title">開車及大眾運輸前往方式</h2>
+                <p class="parking-description">停車位數量有限, 建議提早前往。</p>
             </div>
             <div class="parking-card">
                 <img src="assets/car_park.PNG" alt="婚宴停車資訊">

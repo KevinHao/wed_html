@@ -1,4 +1,38 @@
 /* Wedding day schedule and calendar */
+#preloader-active {
+    position: fixed;
+    z-index: 100000;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+#preloader-active .preloader {
+    display: flex !important;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#preloader-active .preloader-inner,
+#preloader-active .preloader-img.pere-text {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    transform: none;
+}
+
+#preloader-active .preloader-img.pere-text img {
+    display: block;
+    width: 180px;
+    max-width: 180px;
+    height: auto;
+}
+
 .invite-story {
     background: #fffaf7;
 }
@@ -58,15 +92,23 @@
 }
 
 .invite-story .invite-details li {
+    display: grid;
+    grid-template-columns: 110px minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: baseline;
     margin: 8px 0;
     color: #555;
+    font-family: "Dancing Script", "Microsoft JhengHei", sans-serif;
     font-size: 15px;
 }
 
 .invite-story .invite-details time {
-    display: inline-block;
-    width: 58px;
+    display: block;
+    width: auto;
+    white-space: nowrap;
     color: #a34b51;
+    font-family: "Dancing Script", cursive;
+    font-size: 18px;
     font-weight: 700;
 }
 
@@ -173,10 +215,12 @@
 
     .invite-story .invite-details li {
         font-size: 13px;
+        grid-template-columns: 102px minmax(0, 1fr);
+        column-gap: 8px;
     }
 
     .invite-story .invite-details time {
-        width: 48px;
+        width: auto;
     }
 
 .venue-area {
