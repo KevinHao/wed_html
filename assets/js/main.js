@@ -249,13 +249,31 @@
 
 
 // 12 Pop Up Img
-    var popUp = $('.single_gallery_part, .img-pop-up, .gallery-lightbox');
+    var popUp = $('.single_gallery_part, .img-pop-up');
       if(popUp.length){
         popUp.magnificPopup({
           type: 'image',
           gallery:{
             enabled:true
           }
+        });
+      }
+
+    var galleryLinks = $('.gallery-active .owl-item:not(.cloned) .gallery-lightbox');
+      if(galleryLinks.length){
+        galleryLinks.magnificPopup({
+          type: 'image',
+          gallery: {
+            enabled: true
+          }
+        });
+
+        $('.gallery-active').on('click.galleryLightbox', '.owl-item.cloned .gallery-lightbox', function(event){
+          event.preventDefault();
+          var href = $(this).attr('href');
+          galleryLinks.filter(function(){
+            return $(this).attr('href') === href;
+          }).first().trigger('click');
         });
       }
 

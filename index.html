@@ -83,6 +83,7 @@
                                         <li><a href="#story">Wedding Day</a></li>
                                         <li><a href="#dress-code">Dress Code</a></li>
                                         <li><a href="#calendar">Calendar</a></li>
+                                        <li><a href="#scratch-date">Reveal Date</a></li>
                                         <li><a href="#info">Venue</a></li>
                                         <li><a href="#parking">Parking</a></li>
                                         <li><a href="#countdown">Countdown</a></li>
@@ -261,6 +262,38 @@
         </div>
     </section>
     <!-- Wedding Calendar End -->
+    <!-- Scratch Date Start -->
+    <section id="scratch-date" class="scratch-date-area section-padding30">
+        <div class="container">
+            <div class="scratch-date-heading text-center">
+                <h2 class="scratch-date-title">Reveal Our Date</h2>
+                <p class="scratch-date-description">刮開三張卡片，揭開我們的婚禮日期。</p>
+            </div>
+            <div class="scratch-cards" aria-label="婚禮日期刮刮樂">
+                <article class="scratch-card" data-value="2026">
+                    <div class="scratch-card-content"><strong>2026</strong><span>YEAR</span></div>
+                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮年份"></canvas>
+                    <span class="scratch-card-hint">SCRATCH</span>
+                </article>
+                <article class="scratch-card" data-value="10">
+                    <div class="scratch-card-content"><strong>10</strong><span>MONTH</span></div>
+                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮月份"></canvas>
+                    <span class="scratch-card-hint">SCRATCH</span>
+                </article>
+                <article class="scratch-card" data-value="18">
+                    <div class="scratch-card-content"><strong>18</strong><span>DAY</span></div>
+                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮日期"></canvas>
+                    <span class="scratch-card-hint">SCRATCH</span>
+                </article>
+            </div>
+            <div class="scratch-result" aria-live="polite" aria-hidden="true">
+                <span class="scratch-result-heart" aria-hidden="true">♥</span>
+                <p><strong>2026</strong><span>10</span><strong>18</strong></p>
+                <span class="scratch-result-caption">SAVE THE DATE</span>
+            </div>
+        </div>
+    </section>
+    <!-- Scratch Date End -->
     <!--? Venue Start -->
     <section id="info" class="venue-area section-padding30">
         <div class="container">
@@ -379,6 +412,7 @@
     <!-- Jquery Plugins, main Jquery -->	
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/scratch-date.js"></script>
     <script src="./assets/js/envelope.js"></script>
     <script src="./assets/js/editor.js"></script>
     
