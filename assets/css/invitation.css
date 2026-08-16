@@ -112,6 +112,42 @@
     font-weight: 700;
 }
 
+.invite-story .invite-timeline {
+    --timeline-time-width: 110px;
+    position: relative;
+}
+
+.invite-story .invite-timeline::before {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: calc(var(--timeline-time-width) + 6px);
+    width: 1px;
+    background: linear-gradient(#d9b46b, #a34b51, #d9b46b);
+    content: "";
+    opacity: .7;
+}
+
+.invite-story .invite-timeline li {
+    position: relative;
+    grid-template-columns: var(--timeline-time-width) minmax(0, 1fr);
+    min-height: 44px;
+    margin: 0;
+    padding: 8px 0;
+}
+
+.invite-story .invite-timeline time {
+    padding-right: 24px;
+    text-align: right;
+}
+
+.invite-story .invite-timeline li span {
+    display: block;
+    padding-left: 18px;
+    color: #555;
+    font-size: 15px;
+}
+
 .invite-story .invite-calendar {
     max-width: 360px;
     margin: 0 auto;
@@ -203,6 +239,15 @@
     .invite-story .invite-date {
         min-width: 90px;
         padding-right: 18px;
+    }
+
+    .invite-story .invite-timeline {
+        --timeline-time-width: 102px;
+    }
+
+    .invite-story .invite-timeline li span {
+        padding-left: 14px;
+        font-size: 13px;
     }
 
     .invite-story .invite-date strong {
@@ -634,7 +679,7 @@
 
 .scratch-result p {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: center;
     gap: 16px;
     margin: 0;
@@ -642,6 +687,7 @@
 
 .scratch-result p strong,
 .scratch-result p span {
+    color: #a34b51;
     font-family: "Dancing Script", "Playfair Display", cursive;
     font-size: 42px;
     font-weight: 700;
@@ -752,4 +798,35 @@
     .scratch-result p span {
         font-size: 27px;
     }
+}
+
+.scroll-reveal,
+.timeline-item-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .85s ease, transform .85s cubic-bezier(.2, .75, .25, 1);
+}
+
+.scroll-reveal.is-visible,
+.timeline-item-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.timeline-item-reveal:nth-child(2) {
+    transition-delay: .12s;
+}
+
+.timeline-item-reveal:nth-child(3) {
+    transition-delay: .24s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal,
+    .timeline-item-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
 }
