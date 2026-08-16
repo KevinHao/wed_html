@@ -1,0 +1,314 @@
+/* Wedding day schedule and calendar */
+.invite-story {
+    background: #fffaf7;
+}
+
+.invite-story .invite-content {
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.invite-story .invite-heading {
+    margin-bottom: 36px;
+    color: #333;
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.invite-story .invite-schedule {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 34px;
+    margin-bottom: 44px;
+}
+
+.invite-story .invite-date {
+    min-width: 130px;
+    padding-right: 34px;
+    border-right: 1px solid #cfc5bf;
+    color: #333;
+    text-align: center;
+}
+
+.invite-story .invite-date .invite-month,
+.invite-story .invite-date .invite-year {
+    display: block;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: .18em;
+}
+
+.invite-story .invite-date strong {
+    display: block;
+    color: #a34b51;
+    font-family: "Playfair Display", serif;
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.invite-story .invite-details {
+    min-width: 250px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
+.invite-story .invite-details li {
+    margin: 8px 0;
+    color: #555;
+    font-size: 15px;
+}
+
+.invite-story .invite-details time {
+    display: inline-block;
+    width: 58px;
+    color: #a34b51;
+    font-weight: 700;
+}
+
+.invite-story .invite-calendar {
+    max-width: 360px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.invite-story .invite-calendar h3 {
+    margin-bottom: 18px;
+    color: #333;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.invite-story .invite-calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.invite-story .invite-calendar th {
+    padding: 7px 0;
+    color: #999;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.invite-story .invite-calendar td {
+    height: 42px;
+    color: #555;
+    font-size: 13px;
+}
+
+.invite-story .calendar-date {
+    position: relative;
+    z-index: 0;
+    display: inline-flex;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    justify-content: center;
+}
+
+.invite-story .calendar-date.is-wedding-day::before {
+    position: absolute;
+    z-index: -1;
+    color: #c85c65;
+    content: "♥";
+    font-size: 35px;
+    line-height: 1;
+}
+
+.invite-story .calendar-date.is-wedding-day {
+    color: #fff;
+    font-weight: 700;
+}
+
+@media (max-width: 575px) {
+    .invite-story .invite-heading {
+        font-size: 30px;
+    }
+
+    .invite-story .invite-schedule {
+        gap: 18px;
+    }
+
+    .invite-story .invite-date {
+        min-width: 90px;
+        padding-right: 18px;
+    }
+
+    .invite-story .invite-date strong {
+        font-size: 52px;
+    }
+
+    .invite-story .invite-details {
+        min-width: 0;
+    }
+
+    .invite-story .invite-details li {
+        font-size: 13px;
+    }
+
+    .invite-story .invite-details time {
+        width: 48px;
+    }
+
+.venue-area {
+    background: #fffaf7;
+}
+
+.venue-map {
+    max-width: 1050px;
+    min-height: 560px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 8px solid #fff;
+    box-shadow: 0 5px 20px rgba(60, 30, 20, .12);
+}
+
+.venue-map iframe {
+    display: block;
+    width: 100%;
+    height: 544px;
+    border: 0;
+}
+
+.venue-details {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.venue-title {
+    margin-bottom: 15px;
+    color: #333;
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.venue-details > img {
+    width: 90px;
+    margin-bottom: 20px;
+}
+
+.venue-list {
+    margin: 0 0 24px;
+}
+
+.venue-list dt {
+    margin-top: 13px;
+    color: #a34b51;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.venue-list dd {
+    margin: 3px 0 0;
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.venue-list a {
+    color: #555;
+}
+
+.venue-link {
+    background: #a34b51;
+    color: #fff;
+}
+
+.venue-link:hover {
+    background: #813c41;
+    color: #fff;
+}
+
+@media (max-width: 575px) {
+    .venue-map {
+        min-height: 300px;
+    }
+
+    .venue-map iframe {
+        height: 284px;
+    }
+
+    .venue-details {
+        padding: 10px 5px;
+    }
+}
+
+.slider-area {
+    position: relative;
+}
+
+.hero-countdown {
+    position: absolute;
+    z-index: 4;
+    top: 12%;
+    left: 50%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 16px;
+    color: #fff;
+    pointer-events: none;
+    text-align: center;
+    transform: translateX(-50%);
+}
+
+.hero-countdown-item {
+    min-width: 58px;
+}
+
+.hero-countdown .counter {
+    display: block;
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 1;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, .35);
+}
+
+.hero-countdown p {
+    margin: 8px 0 0;
+    color: rgba(255, 255, 255, .9);
+    font-size: 10px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.hero-countdown-separator {
+    padding-top: 0;
+    color: rgba(255, 255, 255, .85);
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    line-height: 1;
+}
+
+@media (max-width: 575px) {
+    .hero-countdown {
+        top: 10%;
+        gap: 5px;
+    }
+
+    .hero-countdown-item {
+        min-width: 42px;
+    }
+
+    .hero-countdown .counter,
+    .hero-countdown-separator {
+        font-size: 21px;
+    }
+
+    .hero-countdown p {
+        margin-top: 5px;
+        font-size: 8px;
+    }
+}
