@@ -1,10 +1,18 @@
-/* Wedding day schedule and calendar */
+/* Invitation page styles */
 @font-face {
     font-family: "ChenYuluoyan";
     src: url("../fonts/ChenYuluoyan-2.0-Thin.ttf") format("truetype");
     font-display: swap;
     font-style: normal;
     font-weight: 300;
+}
+
+@font-face {
+    font-family: "Iansui";
+    src: url("../fonts/Iansui-Regular.ttf") format("truetype");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
 }
 
 #preloader-active {
@@ -63,7 +71,7 @@
     align-items: center;
     justify-content: center;
     gap: 34px;
-    margin-bottom: 44px;
+    margin-bottom: 0;
 }
 
 .invite-story .wedding-description {
@@ -194,132 +202,6 @@
     font-size: 15px;
 }
 
-.invite-story .invite-calendar {
-    max-width: 360px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.invite-story .invite-calendar h3 {
-    margin-bottom: 18px;
-    color: #333;
-    font-family: "Playfair Display", serif;
-    font-size: 25px;
-    font-weight: 400;
-}
-
-.invite-story .invite-calendar table {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.invite-story .invite-calendar th {
-    padding: 7px 0;
-    color: #999;
-    font-size: 12px;
-    font-weight: 400;
-}
-
-.invite-story .invite-calendar td {
-    height: 42px;
-    color: #555;
-    font-size: 13px;
-}
-
-.invite-story .calendar-date {
-    position: relative;
-    z-index: 0;
-    display: inline-flex;
-    width: 32px;
-    height: 32px;
-    align-items: center;
-    justify-content: center;
-}
-
-.invite-story .calendar-date.is-wedding-day::before {
-    position: absolute;
-    z-index: -1;
-    color: #c85c65;
-    content: "♥";
-    font-size: 35px;
-    line-height: 1;
-}
-
-.invite-story .calendar-date.is-wedding-day {
-    color: #fff;
-    font-weight: 700;
-    animation: wedding-day-pulse 1.8s ease-in-out infinite;
-}
-
-.invite-story .calendar-date.is-wedding-day::after {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    color: #e5a04f;
-    content: "✦";
-    font-size: 14px;
-    text-shadow: -9px 9px 0 #f0bd69, 8px -6px 0 #f0bd69;
-    animation: wedding-day-sparkle 1.2s ease-in-out infinite;
-}
-
-@keyframes wedding-day-pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.13); }
-}
-
-@keyframes wedding-day-sparkle {
-    0%, 100% { opacity: .35; transform: scale(.75) rotate(0deg); }
-    50% { opacity: 1; transform: scale(1.2) rotate(18deg); }
-}
-
-@media (max-width: 575px) {
-    .invite-story .invite-heading {
-        font-size: 30px;
-    }
-
-    .invite-story .invite-schedule {
-        gap: 18px;
-    }
-
-    .invite-story .invite-date {
-        min-width: 90px;
-        padding-right: 18px;
-    }
-
-    .invite-story .invite-timeline {
-        --timeline-time-width: 102px;
-    }
-
-    .invite-story .invite-timeline li span {
-        padding-left: 14px;
-        font-size: 13px;
-    }
-
-    .invite-story .invite-date strong {
-        font-size: 52px;
-    }
-
-    .invite-story .invite-weekday {
-        margin: 5px 0 3px;
-        font-size: 14px;
-        letter-spacing: .1em;
-    }
-
-    .invite-story .invite-details {
-        min-width: 0;
-    }
-
-    .invite-story .invite-details li {
-        font-size: 13px;
-        grid-template-columns: 102px minmax(0, 1fr);
-        column-gap: 8px;
-    }
-
-    .invite-story .invite-details time {
-        width: auto;
-    }
-
 .venue-area {
     background: #fffaf7;
 }
@@ -422,20 +304,6 @@
     color: #fff;
 }
 
-@media (max-width: 575px) {
-    .venue-map {
-        min-height: 300px;
-    }
-
-    .venue-map iframe {
-        height: 284px;
-    }
-
-    .venue-details {
-        padding: 10px 5px;
-    }
-}
-
 .slider-area {
     position: relative;
 }
@@ -455,7 +323,6 @@
     height: auto;
     max-height: min(100vh, 900px);
     object-fit: contain;
-}
 }
 
 @media (max-width: 576px) {
@@ -513,27 +380,6 @@
     line-height: 1;
 }
 
-@media (max-width: 575px) {
-    .hero-countdown {
-        top: 10%;
-        gap: 5px;
-    }
-
-    .hero-countdown-item {
-        min-width: 42px;
-    }
-
-    .hero-countdown .counter,
-    .hero-countdown-separator {
-        font-size: 21px;
-    }
-
-    .hero-countdown p {
-        margin-top: 5px;
-        font-size: 8px;
-    }
-}
-
 .dress-code-area {
     background: #fffaf7;
 }
@@ -562,22 +408,6 @@
     margin: 0;
     color: #777;
     font-size: 15px;
-}
-
-.dress-full {
-    max-width: 720px;
-    margin: 0 auto 30px;
-    overflow: hidden;
-    border: 8px solid #fff;
-    background: #fff;
-    box-shadow: 0 6px 24px rgba(70, 35, 25, .12);
-    text-align: center;
-}
-
-.dress-full img {
-    display: block;
-    width: 100%;
-    height: auto;
 }
 
 .dress-palette {
@@ -888,13 +718,9 @@
     font-size: 25px;
 }
 
-/* Keep the transition from Dress Code to Venue compact. */
+/* Keep the section transitions compact. */
 .invite-story {
     padding-bottom: 0;
-}
-
-.invite-story .dress-code-inline {
-    padding-bottom: 24px;
 }
 
 .venue-area {
@@ -954,92 +780,6 @@
 @keyframes scratch-petal {
     0%, 100% { opacity: .35; transform: translateY(0) rotate(0deg); }
     50% { opacity: 1; transform: translateY(-8px) rotate(18deg); }
-}
-
-@media (max-width: 575px) {
-    .dress-title,
-    .parking-title {
-        font-size: 30px;
-    }
-
-    .dress-palette {
-        gap: 5px;
-    }
-
-    .dress-color-card {
-        border-width: 2px;
-    }
-
-    .parking-card {
-        padding: 5px;
-    }
-
-    .scratch-date-title {
-        font-size: 30px;
-    }
-
-    .scratch-cards {
-        gap: 7px;
-    }
-
-    .scratch-card {
-        aspect-ratio: 1;
-        border-width: 4px;
-        border-radius: 50%;
-    }
-
-    .scratch-card-content strong {
-        font-size: 32px;
-    }
-
-    .scratch-card-content span {
-        margin-top: 5px;
-        font-size: 8px;
-    }
-
-    .scratch-card-hint {
-        font-size: 6px;
-    }
-
-    .scratch-result p {
-        gap: 10px;
-    }
-
-    .scratch-result p strong {
-        font-size: 34px;
-    }
-
-    .scratch-result p span {
-        font-size: 27px;
-    }
-
-    .scratch-result .scratch-countdown {
-        gap: 5px;
-        margin-top: 50px;
-    }
-
-    .scratch-date-area {
-        padding-bottom: 28px;
-    }
-
-    .scratch-date-area + .invite-story {
-        padding-top: 40px;
-    }
-
-    .venue-area,
-    .parking-area {
-        padding-top: 36px;
-        padding-bottom: 42px;
-    }
-
-    .scratch-result .scratch-countdown .hero-countdown-item {
-        min-width: 40px;
-    }
-
-    .scratch-result .scratch-countdown .counter,
-    .scratch-result .scratch-countdown .hero-countdown-separator {
-        font-size: 20px;
-    }
 }
 
 .scroll-reveal,
@@ -1130,24 +870,6 @@
     height: auto;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-}
-
-@media (max-width: 575px) {
-    .gallery-area2 {
-        padding: 48px 0;
-    }
-
-    .gallery-area2 .gallery-img {
-        width: 82vw;
-        padding: 10px 10px 48px;
-    }
-
-    .gallery-area2 .gallery-img::after {
-        right: 10px;
-        bottom: 12px;
-        left: 10px;
-        font-size: 19px;
-    }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1341,10 +1063,6 @@
         padding-bottom: 0;
     }
 
-    body.mobile-layout .invite-story .dress-code-inline {
-        padding-bottom: 24px;
-    }
-
     body.mobile-layout .venue-area,
     body.mobile-layout .parking-area {
         padding-top: 36px;
@@ -1432,10 +1150,7 @@
         left: 10px;
         font-size: 19px;
     }
-}
 
-/* Critical desktop fallback: keep the rendered page at the mobile width. */
-@media (min-width: 576px) {
     #top {
         width: 400px !important;
         max-width: 400px !important;
@@ -1504,32 +1219,21 @@
     #top > main .scratch-countdown {
         width: max-content !important;
     }
+
+    body.mobile-layout > main > .dress-code-inline {
+        margin-top: 0;
+        padding-top: 16px;
+        padding-bottom: 32px;
+    }
 }
 
 /* Start the side decoration again at the top of each page section. */
 main > section:not(.person-hero),
-main > .gallery-area2,
-main > .dress-code-area {
+main > .gallery-area2 {
     background-image: url("../img/gallery/invitation-side-vines.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 120%;
-}
-
-@media (max-width: 575px) {
-    main > section:not(.person-hero),
-    main > .gallery-area2,
-    main > .dress-code-area {
-        background-size: 100% 120%;
-    }
-}
-
-@media (min-width: 576px) {
-    body.mobile-layout main > section:not(.person-hero),
-    body.mobile-layout main > .gallery-area2,
-    body.mobile-layout main > .dress-code-area {
-        background-size: 100% 120%;
-    }
 }
 
 /* Dress Code is a direct main child, so keep its own background and compact only its padding. */
@@ -1539,41 +1243,209 @@ main > .dress-code-inline {
     padding-bottom: 32px;
 }
 
-/* Prevent the Wedding Day schedule's final margin from creating a white gap. */
-main > #story .invite-schedule {
-    margin-bottom: 0;
-}
-
 @media (max-width: 575px) {
+    .invite-story .invite-heading {
+        font-size: 30px;
+    }
+
+    .invite-story .invite-schedule {
+        gap: 18px;
+    }
+
+    .invite-story .invite-date {
+        min-width: 90px;
+        padding-right: 18px;
+    }
+
+    .invite-story .invite-timeline {
+        --timeline-time-width: 102px;
+    }
+
+    .invite-story .invite-timeline li span {
+        padding-left: 14px;
+        font-size: 13px;
+    }
+
+    .invite-story .invite-date strong {
+        font-size: 52px;
+    }
+
+    .invite-story .invite-weekday {
+        margin: 5px 0 3px;
+        font-size: 14px;
+        letter-spacing: .1em;
+    }
+
+    .invite-story .invite-details {
+        min-width: 0;
+    }
+
+    .invite-story .invite-details li {
+        font-size: 13px;
+        grid-template-columns: 102px minmax(0, 1fr);
+        column-gap: 8px;
+    }
+
+    .invite-story .invite-details time {
+        width: auto;
+    }
+
+    .venue-map {
+        min-height: 300px;
+    }
+
+    .venue-map iframe {
+        height: 284px;
+    }
+
+    .venue-details {
+        padding: 10px 5px;
+    }
+
+    .hero-countdown {
+        top: 10%;
+        gap: 5px;
+    }
+
+    .hero-countdown-item {
+        min-width: 42px;
+    }
+
+    .hero-countdown .counter,
+    .hero-countdown-separator {
+        font-size: 21px;
+    }
+
+    .hero-countdown p {
+        margin-top: 5px;
+        font-size: 8px;
+    }
+
+    .dress-title,
+    .parking-title {
+        font-size: 30px;
+    }
+
+    .dress-palette {
+        gap: 5px;
+    }
+
+    .dress-color-card {
+        border-width: 2px;
+    }
+
+    .parking-card {
+        padding: 5px;
+    }
+
+    .scratch-date-title {
+        font-size: 30px;
+    }
+
+    .scratch-cards {
+        gap: 7px;
+    }
+
+    .scratch-card {
+        aspect-ratio: 1;
+        border-width: 4px;
+        border-radius: 50%;
+    }
+
+    .scratch-card-content strong {
+        font-size: 32px;
+    }
+
+    .scratch-card-content span {
+        margin-top: 5px;
+        font-size: 8px;
+    }
+
+    .scratch-card-hint {
+        font-size: 6px;
+    }
+
+    .scratch-result p {
+        gap: 10px;
+    }
+
+    .scratch-result p strong {
+        font-size: 34px;
+    }
+
+    .scratch-result p span {
+        font-size: 27px;
+    }
+
+    .scratch-result .scratch-countdown {
+        gap: 5px;
+        margin-top: 50px;
+    }
+
+    .scratch-date-area {
+        padding-bottom: 28px;
+    }
+
+    .scratch-date-area + .invite-story {
+        padding-top: 40px;
+    }
+
+    .venue-area,
+    .parking-area {
+        padding-top: 36px;
+        padding-bottom: 42px;
+    }
+
+    .scratch-result .scratch-countdown .hero-countdown-item {
+        min-width: 40px;
+    }
+
+    .scratch-result .scratch-countdown .counter,
+    .scratch-result .scratch-countdown .hero-countdown-separator {
+        font-size: 20px;
+    }
+
+    .gallery-area2 {
+        padding: 48px 0;
+    }
+
+    .gallery-area2 .gallery-img {
+        width: 82vw;
+        padding: 10px 10px 48px;
+    }
+
+    .gallery-area2 .gallery-img::after {
+        right: 10px;
+        bottom: 12px;
+        left: 10px;
+        font-size: 19px;
+    }
+
     main > .dress-code-inline {
         padding-top: 24px;
         padding-bottom: 28px;
     }
 }
 
-@media (min-width: 576px) {
-    body.mobile-layout > main > .dress-code-inline {
-        margin-top: 0;
-        padding-top: 16px;
-        padding-bottom: 32px;
-    }
-}
-
 /* Use the local ChenYuluoyan thin typeface for Chinese invitation copy. */
 .scratch-date-description,
-.wedding-description,
 .invite-story .invite-timeline li span,
-.dress-description,
 .venue-title,
 body.mobile-layout .venue-title,
 .venue-list dt,
 .venue-list dd.venue-copy:not(.venue-name),
 .venue-name .venue-name-zh,
 .venue-link,
-.parking-title,
-.parking-description {
+.parking-title {
     font-family: "ChenYuluoyan", sans-serif;
     font-weight: 600;
+}
+
+.wedding-description,
+.dress-description,
+.parking-description {
+    font-family: "Iansui", sans-serif;
+    font-weight: 400;
 }
 
 /* Give the Chinese copy a little more presence without changing the layout. */
@@ -1623,6 +1495,7 @@ body.mobile-layout .parking-title {
     font-size: 32px;
 }
 
+.dress-description,
 .parking-description {
     width: min(100%, 330px);
     margin-right: auto;
