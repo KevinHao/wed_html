@@ -45,7 +45,7 @@
 .invite-story .invite-heading {
     margin-bottom: 36px;
     color: #333;
-    font-family: "Playfair Display", serif;
+    font-family: "Dancing Script", cursive;
     font-size: 36px;
     font-weight: 400;
 }
@@ -70,6 +70,7 @@
 .invite-story .invite-date .invite-year {
     display: block;
     color: #888;
+    font-family: "Dancing Script", cursive;
     font-size: 14px;
     letter-spacing: .18em;
 }
@@ -81,6 +82,34 @@
     font-size: 64px;
     font-weight: 400;
     line-height: 1;
+}
+
+.invite-story .invite-weekday {
+    display: block;
+    margin: 6px 0 3px;
+    color: #c29148;
+    font-family: "Dancing Script", cursive;
+    font-size: 17px;
+    letter-spacing: .12em;
+    line-height: 1;
+    text-transform: uppercase;
+}
+
+.invite-story .invite-weekday::before,
+.invite-story .invite-weekday::after {
+    color: #d9b46b;
+    content: "•";
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    vertical-align: middle;
+}
+
+.invite-story .invite-weekday::before {
+    margin-right: 5px;
+}
+
+.invite-story .invite-weekday::after {
+    margin-left: 5px;
 }
 
 .invite-story .invite-details {
@@ -254,6 +283,12 @@
         font-size: 52px;
     }
 
+    .invite-story .invite-weekday {
+        margin: 5px 0 3px;
+        font-size: 14px;
+        letter-spacing: .1em;
+    }
+
     .invite-story .invite-details {
         min-width: 0;
     }
@@ -404,8 +439,9 @@
     max-height: min(100vh, 900px);
     object-fit: contain;
 }
+}
 
-@media (max-width: 575px) {
+@media (max-width: 576px) {
     .person-hero {
         min-height: auto;
     }
@@ -500,6 +536,10 @@
     font-weight: 400;
 }
 
+.dress-title {
+    font-family: "Dancing Script", cursive;
+}
+
 .dress-description,
 .parking-description {
     margin: 0;
@@ -555,6 +595,33 @@
     transform: scale(1.06);
 }
 
+.dress-code-area .dress-color-card {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity .7s ease, transform .7s cubic-bezier(.2, .75, .25, 1);
+}
+
+.dress-code-area.is-visible .dress-color-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dress-code-area.is-visible .dress-color-card:nth-child(2) {
+    transition-delay: .2s;
+}
+
+.dress-code-area.is-visible .dress-color-card:nth-child(3) {
+    transition-delay: .6s;
+}
+
+.dress-code-area.is-visible .dress-color-card:nth-child(4) {
+    transition-delay: 1s;
+}
+
+.dress-code-area.is-visible .dress-color-card:nth-child(5) {
+    transition-delay: 1.4s;
+}
+
 .image-zoom-hint {
     margin: 16px 0 0;
     color: #9d8060;
@@ -565,7 +632,7 @@
 }
 
 .parking-area {
-    background: #f8f3ee;
+    background: #fffaf7;
 }
 
 .parking-card {
@@ -600,7 +667,7 @@
 .scratch-date-title {
     margin-bottom: 12px;
     color: #333;
-    font-family: "Playfair Display", serif;
+    font-family: "Dancing Script", cursive;
     font-size: 38px;
     font-weight: 400;
 }
@@ -991,7 +1058,7 @@
 
 .gallery-area2 {
     padding: 70px 0;
-    background: #f8f3ee;
+    background: #fffaf7;
 }
 
 .gallery-area2 .gallery-active .owl-stage-outer {
@@ -1161,6 +1228,12 @@
 
     body.mobile-layout .invite-story .invite-date strong {
         font-size: 52px;
+    }
+
+    body.mobile-layout .invite-story .invite-weekday {
+        margin: 5px 0 3px;
+        font-size: 14px;
+        letter-spacing: .1em;
     }
 
     body.mobile-layout .invite-story .invite-timeline li span {
@@ -1444,20 +1517,27 @@ main > .dress-code-area {
 
 /* Dress Code is a direct main child, so keep its own background and compact only its padding. */
 main > .dress-code-inline {
-    padding-top: 32px;
+    margin-top: 0;
+    padding-top: 16px;
     padding-bottom: 32px;
+}
+
+/* Prevent the Wedding Day schedule's final margin from creating a white gap. */
+main > #story .invite-schedule {
+    margin-bottom: 0;
 }
 
 @media (max-width: 575px) {
     main > .dress-code-inline {
-        padding-top: 28px;
+        padding-top: 12px;
         padding-bottom: 28px;
     }
 }
 
 @media (min-width: 576px) {
     body.mobile-layout > main > .dress-code-inline {
-        padding-top: 32px;
+        margin-top: 0;
+        padding-top: 16px;
         padding-bottom: 32px;
     }
 }
