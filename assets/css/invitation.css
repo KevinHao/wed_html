@@ -1,4 +1,12 @@
 /* Wedding day schedule and calendar */
+@font-face {
+    font-family: "ChenYuluoyan";
+    src: url("../fonts/ChenYuluoyan-2.0-Thin.ttf") format("truetype");
+    font-display: swap;
+    font-style: normal;
+    font-weight: 300;
+}
+
 #preloader-active {
     position: fixed;
     z-index: 100000;
@@ -56,6 +64,15 @@
     justify-content: center;
     gap: 34px;
     margin-bottom: 44px;
+}
+
+.invite-story .wedding-description {
+    width: min(100%, 330px);
+    margin: 0 auto 28px;
+    color: #777;
+    font-size: 16px;
+    line-height: 1.8;
+    text-align: left;
 }
 
 .invite-story .invite-date {
@@ -1489,13 +1506,13 @@
     }
 }
 
-/* A narrow side-only floral accent keeps the top, bottom, and content area clear. */
+/* Start the side decoration again at the top of each page section. */
 main > section:not(.person-hero),
 main > .gallery-area2,
 main > .dress-code-area {
     background-image: url("../img/gallery/invitation-side-vines.svg");
-    background-repeat: no-repeat;
     background-position: center;
+    background-repeat: no-repeat;
     background-size: 100% 120%;
 }
 
@@ -1529,7 +1546,7 @@ main > #story .invite-schedule {
 
 @media (max-width: 575px) {
     main > .dress-code-inline {
-        padding-top: 12px;
+        padding-top: 24px;
         padding-bottom: 28px;
     }
 }
@@ -1540,4 +1557,74 @@ main > #story .invite-schedule {
         padding-top: 16px;
         padding-bottom: 32px;
     }
+}
+
+/* Use the local ChenYuluoyan thin typeface for Chinese invitation copy. */
+.scratch-date-description,
+.wedding-description,
+.invite-story .invite-timeline li span,
+.dress-description,
+.venue-title,
+body.mobile-layout .venue-title,
+.venue-list dt,
+.venue-list dd.venue-copy:not(.venue-name),
+.venue-name .venue-name-zh,
+.venue-link,
+.parking-title,
+.parking-description {
+    font-family: "ChenYuluoyan", sans-serif;
+    font-weight: 600;
+}
+
+/* Give the Chinese copy a little more presence without changing the layout. */
+.scratch-date-description,
+.wedding-description,
+.dress-description,
+.parking-description {
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.invite-story .invite-timeline li span {
+    font-size: 15px;
+}
+
+body.mobile-layout .invite-story .invite-timeline li span {
+    font-size: 15px;
+}
+
+.venue-title,
+body.mobile-layout .venue-title {
+    font-size: 38px;
+}
+
+.venue-list dt {
+    font-size: 15px;
+}
+
+.venue-list dd.venue-copy:not(.venue-name) {
+    font-size: 17px;
+}
+
+.venue-name .venue-name-zh {
+    font-size: 26px;
+}
+
+body.mobile-layout .venue-name .venue-name-zh {
+    font-size: 26px;
+}
+
+.venue-link {
+    font-size: 17px;
+}
+
+.parking-title,
+body.mobile-layout .parking-title {
+    font-size: 32px;
+}
+
+.parking-description {
+    width: min(100%, 330px);
+    margin-right: auto;
+    margin-left: auto;
 }
