@@ -1,0 +1,15 @@
+{
+  "name": "俊凱與學安的婚禮喜帖",
+  "short_name": "婚禮喜帖",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fffaf7",
+  "theme_color": "#a34b51",
+  "icons": [
+    {
+      "src": "assets/img/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}

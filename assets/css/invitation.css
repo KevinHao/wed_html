@@ -1077,7 +1077,7 @@
 @media (min-width: 576px) {
     body.mobile-layout {
         width: 100%;
-        max-width: 304px;
+        max-width: 400px;
         margin: 0 auto;
         overflow-x: hidden;
         background: #fffaf7;
@@ -1085,7 +1085,7 @@
 
     body.mobile-layout > main {
         width: 100%;
-        max-width: 304px;
+        max-width: 400px;
         margin: 0 auto;
         overflow: hidden;
     }
@@ -1093,7 +1093,7 @@
     body.mobile-layout > main,
     body.mobile-layout > main [data-editor-draggable] {
         width: 100% !important;
-        max-width: 304px !important;
+        max-width: 400px !important;
         height: auto !important;
         transform: none !important;
     }
@@ -1347,29 +1347,29 @@
 /* Critical desktop fallback: keep the rendered page at the mobile width. */
 @media (min-width: 576px) {
     #top {
-        width: 304px !important;
-        max-width: 304px !important;
+        width: 400px !important;
+        max-width: 400px !important;
         margin: 0 auto !important;
         overflow-x: hidden !important;
     }
 
     #top > main {
         display: block;
-        width: 304px !important;
-        max-width: 304px !important;
+        width: 400px !important;
+        max-width: 400px !important;
         margin: 0 auto !important;
         overflow: hidden !important;
     }
 
     #top > main .container {
-        width: 304px !important;
-        max-width: 304px !important;
+        width: 400px !important;
+        max-width: 400px !important;
     }
 
     #top > main .scratch-cards {
         display: grid !important;
-        width: 274px !important;
-        max-width: 274px !important;
+        width: 100% !important;
+        max-width: 100% !important;
         grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
         gap: 7px !important;
     }
@@ -1400,8 +1400,8 @@
     }
 
     #top > main .dress-palette {
-        width: 274px !important;
-        max-width: 274px !important;
+        width: 100% !important;
+        max-width: 100% !important;
         gap: 5px !important;
     }
 
@@ -1413,5 +1413,51 @@
 
     #top > main .scratch-countdown {
         width: max-content !important;
+    }
+}
+
+/* A narrow side-only floral accent keeps the top, bottom, and content area clear. */
+main > section:not(.person-hero),
+main > .gallery-area2,
+main > .dress-code-area {
+    background-image: url("../img/gallery/invitation-side-vines.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 120%;
+}
+
+@media (max-width: 575px) {
+    main > section:not(.person-hero),
+    main > .gallery-area2,
+    main > .dress-code-area {
+        background-size: 100% 120%;
+    }
+}
+
+@media (min-width: 576px) {
+    body.mobile-layout main > section:not(.person-hero),
+    body.mobile-layout main > .gallery-area2,
+    body.mobile-layout main > .dress-code-area {
+        background-size: 100% 120%;
+    }
+}
+
+/* Dress Code is a direct main child, so keep its own background and compact only its padding. */
+main > .dress-code-inline {
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+@media (max-width: 575px) {
+    main > .dress-code-inline {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+}
+
+@media (min-width: 576px) {
+    body.mobile-layout > main > .dress-code-inline {
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
 }
