@@ -337,6 +337,25 @@
     line-height: 1.7;
 }
 
+.venue-name .venue-name-zh,
+.venue-name .venue-name-en {
+    display: block;
+}
+
+.venue-name .venue-name-zh {
+    color: #333;
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.venue-name .venue-name-en {
+    margin-top: 2px;
+    color: #777;
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    line-height: 1.4;
+}
+
 .venue-list a {
     color: #555;
 }
@@ -367,6 +386,33 @@
 
 .slider-area {
     position: relative;
+}
+
+.person-hero {
+    display: flex;
+    min-height: min(100vh, 900px);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #fffaf7;
+}
+
+.person-hero img {
+    display: block;
+    width: min(100%, 930px);
+    height: auto;
+    max-height: min(100vh, 900px);
+    object-fit: contain;
+}
+
+@media (max-width: 575px) {
+    .person-hero {
+        min-height: auto;
+    }
+
+    .person-hero img {
+        width: 100%;
+    }
 }
 
 .hero-countdown {
@@ -509,6 +555,15 @@
     transform: scale(1.06);
 }
 
+.image-zoom-hint {
+    margin: 16px 0 0;
+    color: #9d8060;
+    font-size: 12px;
+    letter-spacing: .08em;
+    line-height: 1.6;
+    text-align: center;
+}
+
 .parking-area {
     background: #f8f3ee;
 }
@@ -525,6 +580,11 @@
     display: block;
     width: 100%;
     height: auto;
+}
+
+.parking-lightbox {
+    display: block;
+    cursor: zoom-in;
 }
 
 .scratch-date-area {
@@ -705,6 +765,76 @@
     letter-spacing: .3em;
 }
 
+.scratch-result .scratch-countdown {
+    position: static;
+    top: auto;
+    left: auto;
+    display: flex;
+    width: max-content;
+    margin: 26px auto 0;
+    align-items: flex-start;
+    gap: 12px;
+    color: #a34b51;
+    transform: none;
+}
+
+.scratch-result .scratch-countdown .hero-countdown-item {
+    min-width: 48px;
+}
+
+.scratch-result .scratch-countdown .counter {
+    color: #a34b51;
+    font-family: "Dancing Script", "Playfair Display", cursive;
+    font-size: 25px;
+    text-shadow: none;
+}
+
+.scratch-result .scratch-countdown p {
+    display: block;
+    margin: 5px 0 0;
+    color: #9d8060;
+    font-size: 9px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.scratch-result .scratch-countdown .hero-countdown-separator {
+    padding-top: 0;
+    color: #c9963e;
+    font-size: 25px;
+}
+
+/* Keep the transition from Dress Code to Venue compact. */
+.invite-story {
+    padding-bottom: 0;
+}
+
+.invite-story .dress-code-inline {
+    padding-bottom: 24px;
+}
+
+.venue-area {
+    padding-top: 32px;
+}
+
+.scratch-date-area {
+    padding-bottom: 36px;
+}
+
+.scratch-date-area + .invite-story {
+    padding-top: 48px;
+}
+
+.venue-area,
+.parking-area {
+    padding-top: 52px;
+    padding-bottom: 56px;
+}
+
+.scratch-result .scratch-countdown {
+    margin-top: 42px;
+}
+
 .scratch-result-heart {
     position: absolute;
     top: -24px;
@@ -797,6 +927,34 @@
 
     .scratch-result p span {
         font-size: 27px;
+    }
+
+    .scratch-result .scratch-countdown {
+        gap: 5px;
+        margin-top: 50px;
+    }
+
+    .scratch-date-area {
+        padding-bottom: 28px;
+    }
+
+    .scratch-date-area + .invite-story {
+        padding-top: 40px;
+    }
+
+    .venue-area,
+    .parking-area {
+        padding-top: 36px;
+        padding-bottom: 42px;
+    }
+
+    .scratch-result .scratch-countdown .hero-countdown-item {
+        min-width: 40px;
+    }
+
+    .scratch-result .scratch-countdown .counter,
+    .scratch-result .scratch-countdown .hero-countdown-separator {
+        font-size: 20px;
     }
 }
 
@@ -912,5 +1070,348 @@
     .gallery-area2 .gallery-img {
         transition: none;
         transform: none;
+    }
+}
+
+/* Use the mobile composition on larger screens as a centered phone-width page. */
+@media (min-width: 576px) {
+    body.mobile-layout {
+        width: 100%;
+        max-width: 304px;
+        margin: 0 auto;
+        overflow-x: hidden;
+        background: #fffaf7;
+    }
+
+    body.mobile-layout > main {
+        width: 100%;
+        max-width: 304px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    body.mobile-layout > main,
+    body.mobile-layout > main [data-editor-draggable] {
+        width: 100% !important;
+        max-width: 304px !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    body.mobile-layout > main [data-editor-draggable] {
+        max-width: 100% !important;
+    }
+
+    body.mobile-layout > main .scratch-countdown {
+        width: max-content !important;
+    }
+
+    body.mobile-layout .container {
+        width: 100%;
+        max-width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    body.mobile-layout .col-lg-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    body.mobile-layout .section-padding30 {
+        padding-top: 65px;
+        padding-bottom: 100px;
+    }
+
+    body.mobile-layout .story-padding {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    body.mobile-layout .person-hero {
+        min-height: auto;
+    }
+
+    body.mobile-layout .person-hero img {
+        width: 100%;
+    }
+
+    body.mobile-layout .invite-story .invite-heading {
+        font-size: 30px;
+    }
+
+    body.mobile-layout .invite-story .invite-schedule {
+        gap: 18px;
+    }
+
+    body.mobile-layout .invite-story .invite-date {
+        min-width: 90px;
+        padding-right: 18px;
+    }
+
+    body.mobile-layout .invite-story .invite-timeline {
+        --timeline-time-width: 102px;
+    }
+
+    body.mobile-layout .invite-story .invite-details li {
+        grid-template-columns: 102px minmax(0, 1fr);
+        column-gap: 8px;
+        font-size: 13px;
+    }
+
+    body.mobile-layout .invite-story .invite-date strong {
+        font-size: 52px;
+    }
+
+    body.mobile-layout .invite-story .invite-timeline li span {
+        padding-left: 14px;
+        font-size: 13px;
+    }
+
+    body.mobile-layout .dress-title,
+    body.mobile-layout .parking-title {
+        font-size: 30px;
+    }
+
+    body.mobile-layout .dress-palette {
+        gap: 5px;
+    }
+
+    body.mobile-layout .dress-color-card {
+        border-width: 2px;
+    }
+
+    body.mobile-layout .scratch-date-area {
+        padding-bottom: 28px;
+    }
+
+    body.mobile-layout .scratch-date-title {
+        font-size: 30px;
+    }
+
+    body.mobile-layout .scratch-cards {
+        display: grid;
+        width: 100%;
+        max-width: calc(100% - 30px);
+        gap: 7px;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    body.mobile-layout .scratch-card {
+        display: block;
+        width: auto;
+        min-width: 0;
+        border-width: 4px;
+    }
+
+    body.mobile-layout .scratch-card-content strong {
+        font-size: 32px;
+    }
+
+    body.mobile-layout .scratch-card-content span {
+        margin-top: 5px;
+        font-size: 8px;
+    }
+
+    body.mobile-layout .scratch-card-hint {
+        font-size: 6px;
+    }
+
+    body.mobile-layout .scratch-result p {
+        gap: 10px;
+    }
+
+    body.mobile-layout .scratch-result p strong {
+        font-size: 34px;
+    }
+
+    body.mobile-layout .scratch-result p span {
+        font-size: 27px;
+    }
+
+    body.mobile-layout .scratch-result .scratch-countdown {
+        gap: 5px;
+        margin-top: 50px;
+    }
+
+    body.mobile-layout .scratch-result .scratch-countdown .hero-countdown-item {
+        min-width: 40px;
+    }
+
+    body.mobile-layout .scratch-result .scratch-countdown .counter,
+    body.mobile-layout .scratch-result .scratch-countdown .hero-countdown-separator {
+        font-size: 20px;
+    }
+
+    body.mobile-layout .scratch-date-area + .invite-story {
+        padding-top: 40px;
+    }
+
+    body.mobile-layout .invite-story {
+        padding-bottom: 0;
+    }
+
+    body.mobile-layout .invite-story .dress-code-inline {
+        padding-bottom: 24px;
+    }
+
+    body.mobile-layout .venue-area,
+    body.mobile-layout .parking-area {
+        padding-top: 36px;
+        padding-bottom: 42px;
+    }
+
+    body.mobile-layout .venue-area {
+        background: #fffaf7;
+    }
+
+    body.mobile-layout .venue-map {
+        max-width: 1050px;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 8px solid #fff;
+        box-shadow: 0 5px 20px rgba(60, 30, 20, .12);
+    }
+
+    body.mobile-layout .venue-map iframe {
+        display: block;
+        width: 100%;
+        border: 0;
+    }
+
+    body.mobile-layout .venue-title {
+        margin-bottom: 15px;
+        color: #333;
+        font-family: "Playfair Display", serif;
+        font-size: 36px;
+        font-weight: 400;
+    }
+
+    body.mobile-layout .venue-details > img {
+        width: 90px;
+        margin-bottom: 20px;
+    }
+
+    body.mobile-layout .venue-name .venue-name-zh,
+    body.mobile-layout .venue-name .venue-name-en {
+        display: block;
+    }
+
+    body.mobile-layout .venue-name .venue-name-zh {
+        color: #333;
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    body.mobile-layout .venue-name .venue-name-en {
+        margin-top: 2px;
+        color: #777;
+        font-family: "Playfair Display", serif;
+        font-size: 20px;
+        line-height: 1.4;
+    }
+
+    body.mobile-layout .venue-map {
+        min-height: 300px;
+    }
+
+    body.mobile-layout .venue-map iframe {
+        height: 284px;
+    }
+
+    body.mobile-layout .venue-details {
+        padding: 10px 5px;
+    }
+
+    body.mobile-layout .parking-card {
+        padding: 5px;
+    }
+
+    body.mobile-layout .gallery-area2 {
+        padding: 48px 0;
+    }
+
+    body.mobile-layout .gallery-area2 .gallery-img {
+        width: 82%;
+        padding: 10px 10px 48px;
+    }
+
+    body.mobile-layout .gallery-area2 .gallery-img::after {
+        right: 10px;
+        bottom: 12px;
+        left: 10px;
+        font-size: 19px;
+    }
+}
+
+/* Critical desktop fallback: keep the rendered page at the mobile width. */
+@media (min-width: 576px) {
+    #top {
+        width: 304px !important;
+        max-width: 304px !important;
+        margin: 0 auto !important;
+        overflow-x: hidden !important;
+    }
+
+    #top > main {
+        display: block;
+        width: 304px !important;
+        max-width: 304px !important;
+        margin: 0 auto !important;
+        overflow: hidden !important;
+    }
+
+    #top > main .container {
+        width: 304px !important;
+        max-width: 304px !important;
+    }
+
+    #top > main .scratch-cards {
+        display: grid !important;
+        width: 274px !important;
+        max-width: 274px !important;
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 7px !important;
+    }
+
+    #top > main .scratch-card {
+        display: block !important;
+        width: auto !important;
+        height: auto !important;
+        aspect-ratio: 1 !important;
+        border-radius: 50% !important;
+    }
+
+    #top > main .scratch-card-content {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    #top > main .scratch-canvas {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    #top > main .dress-palette {
+        width: 274px !important;
+        max-width: 274px !important;
+        gap: 5px !important;
+    }
+
+    #top > main [data-editor-draggable] {
+        max-width: 100% !important;
+        height: auto !important;
+        transform: none !important;
+    }
+
+    #top > main .scratch-countdown {
+        width: max-content !important;
     }
 }

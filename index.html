@@ -29,12 +29,12 @@
     <link rel="stylesheet" href="assets/css/editor.css">
     <link rel="stylesheet" href="assets/css/envelope.css">
 </head>
-<body id="top">
+<body id="top" class="mobile-layout">
 <div id="envelope-intro" class="envelope-intro" role="dialog" aria-modal="true" aria-label="開啟電子喜帖">
     <div class="envelope-scene">
         <div class="envelope-card">
             <div class="envelope-fake-screen" aria-hidden="true">
-                <img src="assets/img/envelope/background_photo.jpg" alt="">
+                <img src="assets/img/envelope/loading.png" alt="">
             </div>
             <div class="envelope-split-stage" aria-hidden="true">
                 <img class="envelope-page envelope-left-page" src="assets/img/envelope/envelope-left.png" alt="">
@@ -61,50 +61,11 @@
         </div>
     </div>
 </div>
-<!-- Preloader Start -->
-<header>
-    <!-- Header Start -->
-    <div class="header-area">
-            <div class="main-header header-sticky">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <!-- Logo -->
-                        <div class="col-xl-2 col-lg-2">
-                            <div class="logo">
-                                <a href="#top"><img src="assets/img/logo/logo.png" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="col-xl-10 col-lg-10 col-md-10">
-                            <!-- Main-menu -->
-                            <div class="main-menu f-right d-none d-lg-block">
-                                <nav>                              
-                                    <ul id="navigation">                                                          
-                                        <li><a href="#top">Home</a></li>
-                                        <li><a href="#story">Wedding Day</a></li>
-                                        <li><a href="#dress-code">Dress Code</a></li>
-                                        <li><a href="#calendar">Calendar</a></li>
-                                        <li><a href="#scratch-date">Reveal Date</a></li>
-                                        <li><a href="#info">Venue</a></li>
-                                        <li><a href="#parking">Parking</a></li>
-                                        <li><a href="#countdown">Countdown</a></li>
-                                        <li><a href="#gallery">Gallery</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div> 
-                        <!-- Mobile Menu -->
-                        <div class="col-12">
-                            <div class="mobile_menu d-block d-lg-none"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <!-- Header End -->
-</header>
 <main>
-    <!--? Slider Area Start-->
-    <div class="slider-area">
+    <!-- 原本的 Slider Area 已停用，保留在 template 中以便日後恢復。 -->
+    <template id="disabled-slider-area">
+        <!--? Slider Area Start-->
+        <div class="slider-area">
         <div class="slider-active">
             <!-- Single Slider -->
             <div class="single-slider slider-height hero-overly d-flex align-items-center">
@@ -135,29 +96,67 @@
                 </div>
             </div>
         </div>
-        <div id="countdown" class="hero-countdown count-down-wrapper" aria-label="距離婚禮倒數">
-            <div class="hero-countdown-item">
-                <span class="counter">0</span>
-                <p>Days</p>
+        </div>
+        <!-- Slider Area End-->
+    </template>
+    <!-- Person image hero start -->
+    <section class="person-hero" aria-label="婚禮主視覺">
+        <img src="assets/person.svg" alt="婚禮主視覺插畫">
+    </section>
+    <!-- Person image hero end -->
+    <!-- Scratch Date Start -->
+    <section id="scratch-date" class="scratch-date-area section-padding30 scroll-reveal">
+        <div class="container">
+            <div class="scratch-date-heading text-center">
+                <h2 class="scratch-date-title">Reveal Our Date</h2>
+                <p class="scratch-date-description">刮開三張卡片，揭開我們的婚禮日期。</p>
             </div>
-            <span class="hero-countdown-separator">:</span>
-            <div class="hero-countdown-item">
-                <span class="counter">0</span>
-                <p>Hours</p>
+            <div class="scratch-cards" aria-label="婚禮日期刮刮樂">
+                <article class="scratch-card" data-value="2026">
+                    <div class="scratch-card-content"><strong>2026</strong><span>YEAR</span></div>
+                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮年份"></canvas>
+                    <span class="scratch-card-hint">SCRATCH</span>
+                </article>
+                <article class="scratch-card" data-value="10">
+                    <div class="scratch-card-content"><strong>10</strong><span>MONTH</span></div>
+                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮月份"></canvas>
+                    <span class="scratch-card-hint">SCRATCH</span>
+                </article>
+                <article class="scratch-card" data-value="18">
+                    <div class="scratch-card-content"><strong>18</strong><span>DAY</span></div>
+                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮日期"></canvas>
+                    <span class="scratch-card-hint">SCRATCH</span>
+                </article>
             </div>
-            <span class="hero-countdown-separator">:</span>
-            <div class="hero-countdown-item">
-                <span class="counter">0</span>
-                <p>Mins</p>
-            </div>
-            <span class="hero-countdown-separator">:</span>
-            <div class="hero-countdown-item">
-                <span class="counter">0</span>
-                <p>Secs</p>
+            <div class="scratch-result" aria-live="polite" aria-hidden="true">
+                <span class="scratch-result-heart" aria-hidden="true">♥</span>
+                <p><strong>2026</strong><span>10</span><strong>18</strong></p>
+                <span class="scratch-result-caption">SAVE THE DATE</span>
+                <div id="countdown" class="hero-countdown count-down-wrapper scratch-countdown" aria-label="距離婚禮倒數">
+                    <div class="hero-countdown-item">
+                        <span class="counter">0</span>
+                        <p>Days</p>
+                    </div>
+                    <span class="hero-countdown-separator">:</span>
+                    <div class="hero-countdown-item">
+                        <span class="counter">0</span>
+                        <p>Hours</p>
+                    </div>
+                    <span class="hero-countdown-separator">:</span>
+                    <div class="hero-countdown-item">
+                        <span class="counter">0</span>
+                        <p>Mins</p>
+                    </div>
+                    <span class="hero-countdown-separator">:</span>
+                    <div class="hero-countdown-item">
+                        <span class="counter">0</span>
+                        <p>Secs</p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- Slider Area End-->
+    </section>
+    <!-- Scratch Date End -->
     <!--? Wedding Day Start -->
     <section id="story" class="Our-story-area story-padding invite-story scroll-reveal">
         <div class="container">
@@ -189,12 +188,13 @@
                         <div class="dress-color-card"><a href="assets/dress/4.jpg" class="dress-color-lightbox"><img src="assets/dress/4.jpg" alt="Dress Code 色彩 4"></a></div>
                         <div class="dress-color-card"><a href="assets/dress/5.jpg" class="dress-color-lightbox"><img src="assets/dress/5.jpg" alt="Dress Code 色彩 5"></a></div>
                     </div>
+                    <p class="image-zoom-hint">點擊圖片即可放大圖片</p>
                 </div>
         </div>
     </section>
     <!-- Wedding Day End -->
     <!-- Wedding Calendar Start -->
-    <section id="calendar" class="invite-calendar-page story-padding invite-story scroll-reveal">
+    <!--section id="calendar" class="invite-calendar-page story-padding invite-story scroll-reveal">
         <div class="container">
             <div class="invite-content text-center">
                 <h2 class="invite-heading">Wedding Calendar</h2>
@@ -262,38 +262,7 @@
         </div>
     </section>
     <!-- Wedding Calendar End -->
-    <!-- Scratch Date Start -->
-    <section id="scratch-date" class="scratch-date-area section-padding30 scroll-reveal">
-        <div class="container">
-            <div class="scratch-date-heading text-center">
-                <h2 class="scratch-date-title">Reveal Our Date</h2>
-                <p class="scratch-date-description">刮開三張卡片，揭開我們的婚禮日期。</p>
-            </div>
-            <div class="scratch-cards" aria-label="婚禮日期刮刮樂">
-                <article class="scratch-card" data-value="2026">
-                    <div class="scratch-card-content"><strong>2026</strong><span>YEAR</span></div>
-                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮年份"></canvas>
-                    <span class="scratch-card-hint">SCRATCH</span>
-                </article>
-                <article class="scratch-card" data-value="10">
-                    <div class="scratch-card-content"><strong>10</strong><span>MONTH</span></div>
-                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮月份"></canvas>
-                    <span class="scratch-card-hint">SCRATCH</span>
-                </article>
-                <article class="scratch-card" data-value="18">
-                    <div class="scratch-card-content"><strong>18</strong><span>DAY</span></div>
-                    <canvas class="scratch-canvas" aria-label="刮開查看婚禮日期"></canvas>
-                    <span class="scratch-card-hint">SCRATCH</span>
-                </article>
-            </div>
-            <div class="scratch-result" aria-live="polite" aria-hidden="true">
-                <span class="scratch-result-heart" aria-hidden="true">♥</span>
-                <p><strong>2026</strong><span>10</span><strong>18</strong></p>
-                <span class="scratch-result-caption">SAVE THE DATE</span>
-            </div>
-        </div>
-    </section>
-    <!-- Scratch Date End -->
+
     <!--? Venue Start -->
     <section id="info" class="venue-area section-padding30 scroll-reveal">
         <div class="container">
@@ -304,7 +273,10 @@
                         <img src="assets/img/gallery/tittle_img.png" alt="">
                         <dl class="venue-list">
                             <dt>宴客地點</dt>
-                            <dd class="venue-copy">蘭克斯特 <span>Lancaster House</span></dd>
+                            <dd class="venue-copy venue-name">
+                                <span class="venue-name-zh">蘭克斯特</span>
+                                <span class="venue-name-en">Lancaster House</span>
+                            </dd>
                             <dt>電話</dt>
                             <dd class="venue-copy">0422427888</dd>
                             <dt>確切地址</dt>
@@ -330,8 +302,11 @@
                 <p class="parking-description">停車位數量有限, 建議提早前往。</p>
             </div>
             <div class="parking-card">
-                <img src="assets/car_park.PNG" alt="婚宴停車資訊">
+                <a href="assets/car_park.PNG" class="parking-lightbox" title="婚宴停車資訊">
+                    <img src="assets/car_park.PNG" alt="婚宴停車資訊">
+                </a>
             </div>
+            <p class="image-zoom-hint">點擊圖片即可放大圖片</p>
         </div>
     </section>
     <!-- Parking End -->
@@ -366,6 +341,7 @@
                             <a href="assets/img/gallery/gallery08.jpg" class="gallery-lightbox"><img src="assets/img/gallery/gallery08.jpg" alt="婚紗照 8"></a>
                         </div>
                     </div>
+                    <p class="image-zoom-hint">點擊圖片即可放大圖片</p>
                 </div>
             </div>
         </div>

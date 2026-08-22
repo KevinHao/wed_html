@@ -286,6 +286,13 @@
         }
       });
     }
+
+    var parkingInfo = $('.parking-lightbox');
+    if (parkingInfo.length) {
+      parkingInfo.magnificPopup({
+        type: 'image'
+      });
+    }
       
 /* 14. Wedding countdown */
     // 請將日期改成你的婚禮日期，格式為 YYYY-MM-DDTHH:mm:ss+08:00。
