@@ -80,7 +80,7 @@
     color: #777;
     font-size: 16px;
     line-height: 1.8;
-    text-align: left;
+    text-align: center;
 }
 
 .invite-story .invite-date {
@@ -1222,7 +1222,7 @@
 
     body.mobile-layout > main > .dress-code-inline {
         margin-top: 0;
-        padding-top: 16px;
+        padding-top: 56px;
         padding-bottom: 32px;
     }
 }
@@ -1237,10 +1237,11 @@ main > .gallery-area2 {
 }
 
 /* Dress Code is a direct main child, so keep its own background and compact only its padding. */
-main > .dress-code-inline {
+main > section:not(.person-hero).dress-code-inline {
     margin-top: 0;
-    padding-top: 16px;
+    padding-top: 72px;
     padding-bottom: 32px;
+    background-position: center calc(50% + 10px);
 }
 
 @media (max-width: 575px) {
@@ -1422,16 +1423,13 @@ main > .dress-code-inline {
     }
 
     main > .dress-code-inline {
-        padding-top: 24px;
+        padding-top: 56px;
         padding-bottom: 28px;
     }
 }
 
 /* Use the local ChenYuluoyan thin typeface for Chinese invitation copy. */
-.scratch-date-description,
 .invite-story .invite-timeline li span,
-.venue-title,
-body.mobile-layout .venue-title,
 .venue-list dt,
 .venue-list dd.venue-copy:not(.venue-name),
 .venue-name .venue-name-zh,
@@ -1441,6 +1439,7 @@ body.mobile-layout .venue-title,
     font-weight: 600;
 }
 
+.scratch-date-description,
 .wedding-description,
 .dress-description,
 .parking-description {
@@ -1467,6 +1466,7 @@ body.mobile-layout .invite-story .invite-timeline li span {
 
 .venue-title,
 body.mobile-layout .venue-title {
+    font-family: "Dancing Script", cursive;
     font-size: 38px;
 }
 
@@ -1475,7 +1475,8 @@ body.mobile-layout .venue-title {
 }
 
 .venue-list dd.venue-copy:not(.venue-name) {
-    font-size: 17px;
+    font-size: 26px;
+    font-weight: 400;
 }
 
 .venue-name .venue-name-zh {
