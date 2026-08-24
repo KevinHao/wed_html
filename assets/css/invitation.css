@@ -193,6 +193,7 @@
 .invite-story .invite-timeline time {
     padding-right: 24px;
     text-align: right;
+    transform: translateX(-5px);
 }
 
 .invite-story .invite-timeline li span {
@@ -1457,13 +1458,19 @@ main > section:not(.person-hero).dress-code-inline {
 }
 
 .invite-story .invite-timeline li span {
-    font-size: 15px;
+    font-size: 19px;
 }
 
 body.mobile-layout .invite-story .invite-timeline li span {
-    font-size: 15px;
+    font-size: 19px;
 }
 
+.invite-story .invite-heading,
+body.mobile-layout .invite-story .invite-heading,
+.dress-title,
+body.mobile-layout .dress-title,
+.scratch-date-title,
+body.mobile-layout .scratch-date-title,
 .venue-title,
 body.mobile-layout .venue-title {
     font-family: "Dancing Script", cursive;
@@ -1471,7 +1478,7 @@ body.mobile-layout .venue-title {
 }
 
 .venue-list dt {
-    font-size: 15px;
+    font-size: 19px;
 }
 
 .venue-list dd.venue-copy:not(.venue-name) {
