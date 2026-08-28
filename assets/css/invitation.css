@@ -1509,3 +1509,13 @@ body.mobile-layout .parking-title {
     margin-right: auto;
     margin-left: auto;
 }
+
+#scrollUp {
+    background: #e8b7bd;
+    color: #fff;
+}
+
+#scrollUp:hover {
+    background: #d99aa3;
+    color: #fff;
+}

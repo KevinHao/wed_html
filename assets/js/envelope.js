@@ -41,7 +41,7 @@
         window.setTimeout(function () {
             intro.classList.add('is-hidden');
             document.body.classList.remove('envelope-locked');
-        }, 3400);
+        }, 2400);
 
     });
 }());
